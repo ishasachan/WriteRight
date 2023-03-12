@@ -11,13 +11,14 @@
 WriteRight is a web application that allows users to generate cover letters quickly and easily using the power of artificial intelligence. With WriteRight, you can create professional, personalized cover letters in just a few minutes.
 
 # Table of Contents
-[Overview](https://github.com/ishasachan/WriteRight#overview) \
-[Features](https://github.com/ishasachan/WriteRight#features) \
-[Tech Stack](https://github.com/ishasachan/WriteRight#overview) \
-[Getting Started](https://github.com/ishasachan/WriteRight#overview) \
-[Usage](https://github.com/ishasachan/WriteRight#overview) \
-[Contributing](https://github.com/ishasachan/WriteRight#overview) \
-[License](https://github.com/ishasachan/WriteRight#overview)
+- [Overview](https://github.com/ishasachan/WriteRight#overview)
+- [Features](https://github.com/ishasachan/WriteRight#features)
+- [Tech Stack](https://github.com/ishasachan/WriteRight#tech-stack)
+- [Getting Started](https://github.com/ishasachan/WriteRight#getting-started)
+- [Usage](https://github.com/ishasachan/WriteRight#usage)
+- [Contributing](https://github.com/ishasachan/WriteRight#contributing)
+- [License](https://github.com/ishasachan/WriteRight#license)
+- [Demo Video](https://github.com/ishasachan/WriteRight#demo-video)
 
 
 ## Overview
