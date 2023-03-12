@@ -27,9 +27,7 @@ WriteRight is built using Next.js and integrates with the ChatGPT API to generat
 ## Features
 - Simple, intuitive user interface
 - High-quality cover letter generation using ChatGPT API
-- Ability to download cover letters in PDF or Word format
-- Customizable templates and formatting options
-- Support for multiple languages
+- Simply Copy to Clipboard
 
 ## Tech Stack
 - Next.js
