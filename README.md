@@ -1,7 +1,7 @@
 <p align="center"> <a href="https://github.com/ishasachan/WriteRight"> <img alt="Kotlin Calculator" src="https://github.com/ishasachan/WriteRight/blob/main/public/icon.png" width="146"> </a> </p>
 
 <h1 align="center"> WriteRight </h1>
-<p align="center">Cover Generator Application using AI</p>
+<p align="center">Cover letter made easy!</p>
 
 ![Build](https://img.shields.io/badge/Build-Passing-success?https://img.shields.io/endpoint?&style=for-the-badge)
 ![Kotlin](https://img.shields.io/badge/Made_with-NextJs-blueviolet?style=for-the-badge)
