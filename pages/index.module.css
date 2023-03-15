@@ -152,3 +152,14 @@
   margin: 16px 0 40px;
 }
 
+@media (max-width: 768px) {
+  .coverresult {
+    margin: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .coverresult {
+    margin: 15px;
+  }
+}
