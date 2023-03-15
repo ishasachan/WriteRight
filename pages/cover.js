@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import styles from '../pages/index.module.css';
-import PDFDownloadButton from './PDFDownloadButton';
+import styles from './index.module.css';
+import PDFDownloadButton from '@/components/PDFDownloadButton';
 
 const Cover = () => {
   const [name, setName] = useState('');
