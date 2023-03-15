@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import styles from '../styles/index.module.css';
+import styles from '../pages/index.module.css';
 import PDFDownloadButton from './PDFDownloadButton';
 
 const Cover = () => {
