@@ -21,7 +21,7 @@
   }
   
   .logo h1 {
-    font-size: 24px;
+    font-size: 14px;
     font-weight: bold;
     color: #333;
   }
@@ -45,7 +45,7 @@
     color: #333;
     font-weight: bold;
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 10px;
   }
   
   .navLinks a:hover {
@@ -53,3 +53,30 @@
     color: #fff;
   }
   
+
+  @media screen and (max-width: 768px) {
+
+    .navbar {
+      flex-direction: row;
+      padding: 1rem 0.5rem;
+    }
+  
+    .logo h1 {
+      font-size: 16px;
+    }
+  
+    .navLinks {
+      flex-direction: row;
+      align-items: first baseline;
+      margin-top: 1rem;
+    }
+  
+    .navLinks li {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  
+    .navLinks a {
+      padding: 10px;
+    }
+  }
