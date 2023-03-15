@@ -1,9 +1,9 @@
-import Head from 'next/head';
 import React from 'react';
 import { useState } from 'react';
-import styles from './index.module.css';
+import styles from '../styles/index.module.css';
+import PDFDownloadButton from './PDFDownloadButton';
 
-export default function Home() {
+const Cover = () => {
   const [name, setName] = useState('');
   const [companyName, setCompanyName] = useState('');
   const [role, setRole] = useState('');
@@ -11,6 +11,14 @@ export default function Home() {
   const [about, setAbout] = useState('');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState('');
+
+  const plainText = result.replace(/<br\s?\/?>/g, '\n');
+
+  const copyToClipboard = () => {
+    const plainText = result.replace(/<br\s?\/?>/g, '\n');
+    navigator.clipboard.writeText(plainText);
+    alert('Copied to clipboard!');
+  };
 
   async function onSubmit(event) {
     event.preventDefault();
@@ -27,22 +35,18 @@ export default function Home() {
         body: JSON.stringify({ name, companyName, role, requirements, about }),
       });
       const data = await response.json();
-      setResult(data.result.replaceAll('\\n', '<br />'));
+      setResult(data.result.replaceAll('\n', '<br />'));
     } catch (e){
       alert("Failed to generate cover letter. Try later");
+      console.log(e);
     } finally {
       setLoading(false);
     }
   }
 
-  return (
-    <div>
-      <Head>
-        <title>WriteRight</title>
-        <link rel="icon" href="/icon.png" />
-      </Head>
-
-      <main className={styles.main}>
+    return ( 
+        <div id='generate-cover'>
+        <main className={styles.main}>
         <h3>Cover Letter generator 🔖</h3>
         <form onSubmit={onSubmit}>
 
@@ -97,16 +101,27 @@ export default function Home() {
 
         {loading && (
           <div>
-            <h3>Generating Your Cover Letter 🔖💡</h3>
+            <h3>Generating Your Cover Letter...</h3>
             <img src="/loading.gif" className={styles.loading} />
           </div>
         )}
 
-        <div
-          className={styles.result}
-          dangerouslySetInnerHTML={{ __html: result }}
-        />
+        {result && (
+          <div className={styles.coverresult}>
+              <div className={styles.coverhead}>
+                <h2>Your Cover Letter</h2>
+              </div>
+              <div className={styles.covertext} dangerouslySetInnerHTML={{ __html: result }} />
+              <div className={styles.coverbtn}>
+                <button className={styles.copy} onClick={copyToClipboard}>Copy to Clipboard</button>
+                <PDFDownloadButton result={plainText} />
+              </div>
+          </div>
+        )}
+
       </main>
     </div>
   );
 }
+ 
+export default Cover;

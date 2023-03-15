@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import styles from '../pages/index.module.css';
+import PDFDownloadButton from './PDFDownloadButton';
 
 const Cover = () => {
-
   const [name, setName] = useState('');
   const [companyName, setCompanyName] = useState('');
   const [role, setRole] = useState('');
@@ -11,6 +11,8 @@ const Cover = () => {
   const [about, setAbout] = useState('');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState('');
+
+  const plainText = result.replace(/<br\s?\/?>/g, '\n');
 
   const copyToClipboard = () => {
     const plainText = result.replace(/<br\s?\/?>/g, '\n');
@@ -36,6 +38,7 @@ const Cover = () => {
       setResult(data.result.replaceAll('\n', '<br />'));
     } catch (e){
       alert("Failed to generate cover letter. Try later");
+      console.log(e);
     } finally {
       setLoading(false);
     }
@@ -43,7 +46,7 @@ const Cover = () => {
 
     return ( 
         <div id='generate-cover'>
-            <main className={styles.main}>
+        <main className={styles.main}>
         <h3>Cover Letter generator 🔖</h3>
         <form onSubmit={onSubmit}>
 
@@ -104,14 +107,21 @@ const Cover = () => {
         )}
 
         {result && (
-          <div className={styles.result}>
-            <div dangerouslySetInnerHTML={{ __html: result }} />
-            <button className={styles.copy} onClick={copyToClipboard}>Copy to Clipboard</button>
+          <div className={styles.coverresult}>
+              <div className={styles.coverhead}>
+                <h2>Your Cover Letter</h2>
+              </div>
+              <div className={styles.covertext} dangerouslySetInnerHTML={{ __html: result }} />
+              <div className={styles.coverbtn}>
+                <button className={styles.copy} onClick={copyToClipboard}>Copy to Clipboard</button>
+                <PDFDownloadButton result={plainText} />
+              </div>
           </div>
         )}
+
       </main>
-        </div>
-     );
+    </div>
+  );
 }
  
 export default Cover;

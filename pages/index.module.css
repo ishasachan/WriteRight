@@ -99,6 +99,7 @@
   display: inline-block;
   align-items: center;
   padding: 0.5rem 1rem;
+  padding-right: 20px;
   border-radius: 4px;
   border: none;
   background-color: #ff0080;
@@ -109,4 +110,43 @@
 
 .copy:hover {
   background-color: #ff4da6;
+}
+
+.coverresult {
+  background-color: #ffffff;
+  margin: 50px;
+  text-align: justify;
+  box-shadow: 10px 10px 5px rgb(211, 211, 211);
+}
+
+.covertext {
+  padding: 40px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #353740;
+  font-family: "ColfaxAI", Helvetica, sans-serif;
+}
+
+.coverbtn {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+.coverhead {
+  align-items: center;
+  padding: 20px;
+  background-image: linear-gradient(to bottom right, #fe6081, #ffbedd);
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.coverhead h2 {
+  font-size: 32px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 16px 0 40px;
 }
